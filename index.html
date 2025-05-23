@@ -1,107 +1,212 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emagreça com Saúde</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8c6d9, #e3d4f7);
+      color: #4a3f55;
       min-height: 100vh;
     }
-
     header {
-      background-color: #28a745;
-      color: #fff;
-      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 20px;
       text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 15px rgba(227, 212, 247, 0.6);
     }
-
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 2.8rem;
+      color: #b63f82;
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
     }
-
-    section {
-      flex: 1;
-      padding: 40px 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 1.8em;
+    header p {
+      font-size: 1.3rem;
+      color: #7d5a7c;
       margin-bottom: 20px;
+      font-weight: 400;
     }
-
-    section p {
-      font-size: 1.1em;
+    .banner {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 12px 30px rgba(182, 63, 130, 0.3);
       margin-bottom: 30px;
     }
-
-    a.botao {
-      display: inline-block;
-      padding: 15px 30px;
-      margin: 10px;
-      background-color: #ff5722;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1em;
-      font-weight: 600;
-      transition: background 0.3s ease;
+    .container {
+      max-width: 900px;
+      margin: -60px auto 40px;
+      padding: 30px 25px;
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 8px 40px rgba(182, 63, 130, 0.15);
     }
-
-    a.botao:hover {
-      background-color: #e64a19;
-    }
-
-    footer {
-      background-color: #e9ecef;
+    h2 {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #777;
+      font-weight: 600;
+      font-size: 2rem;
+      color: #a53b76;
+      margin-bottom: 25px;
+      letter-spacing: 0.03em;
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .benefits div {
+      background: #fdeef6;
+      padding: 22px 20px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 6px 15px rgba(181, 60, 125, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .benefits div:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(181, 60, 125, 0.25);
+    }
+    .benefits img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(181, 60, 125, 0.15);
+      background-color: white;
+      padding: 8px;
+    }
+    .benefits div h3 {
+      margin: 0 0 6px;
+      font-size: 1.3rem;
+      color: #b63f82;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .benefits div p {
+      margin: 0;
+      color: #6b4f6d;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .cta img {
+      max-width: 280px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 12px 35px rgba(182, 63, 130, 0.35);
+      transition: transform 0.3s ease;
+    }
+    .cta img:hover {
+      transform: scale(1.05);
+    }
+    .cta a {
+      background: #b63f82;
+      color: white;
+      padding: 17px 36px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(182, 63, 130, 0.5);
+      display: inline-block;
+      transition: background 0.4s ease;
+      letter-spacing: 0.04em;
+    }
+    .cta a:hover {
+      background: #d660a4;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1rem;
+      color: #9a7e9e;
+      background: linear-gradient(135deg, #f8c6d9, #e3d4f7);
+      font-weight: 400;
+    }
+    @media (max-width: 680px) {
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Transforme Seu Corpo com Saúde</h1>
-    <p>Emagreça naturalmente com dicas e um método comprovado</p>
+    <h1>Transforme seu corpo com saúde</h1>
+    <p>Descubra o método natural para perder peso sem sofrimento e com resultados duradouros.</p>
+    <img
+      class="banner"
+      src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1350&q=80"
+      alt="Mulher feliz e saudável após emagrecimento"
+    />
   </header>
 
-  <section>
-    <h2>Comece Sua Jornada de Emagrecimento Agora</h2>
-    <p>Baixe nosso guia gratuito e descubra o segredo das pessoas que emagrecem de forma saudável e duradoura.</p>
+  <div class="container">
+    <h2>Por que escolher este método?</h2>
+    <div class="benefits">
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="Emagrecimento saudável" />
+        <div>
+          <h3>✅ Emagrecimento saudável</h3>
+          <p>Sem dietas radicais ou fórmulas perigosas. Emagreça respeitando o seu corpo.</p>
+        </div>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Resultados duradouros" />
+        <div>
+          <h3>⏳ Resultados duradouros</h3>
+          <p>Mude seus hábitos e mantenha o peso ideal por toda a vida.</p>
+        </div>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Ingredientes naturais" />
+        <div>
+          <h3>🌿 Ingredientes naturais</h3>
+          <p>Baseado em alimentação consciente e produtos naturais.</p>
+        </div>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="Método testado" />
+        <div>
+          <h3>📈 Método testado</h3>
+          <p>Mais de 10 mil pessoas já emagreceram com esse método.</p>
+        </div>
+      </div>
+    </div>
 
-    <!-- 🔗 Botão com seu link de afiliado -->
-    <a href="https://go.hotmart.com/B93212706U" class="botao" target="_blank">
-      Quero Emagrecer com Saúde
-    </a>
-
-    <!-- 🌐 Link para seu site no GitHub -->
-    <a href="https://rafael233.github.io/" class="botao" target="_blank">
-      Visitar meu Site
-    </a>
-  </section>
+    <div class="cta">
+      <img
+        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=500&q=80"
+        alt="Mulher feliz e saudável após emagrecer"
+      />
+      <p><strong>Aproveite agora essa oportunidade única!</strong></p>
+      <a href="https://go.hotmart.com/X99753106D" target="_blank" rel="noopener noreferrer">Quero Emagrecer com Saúde</a>
+    </div>
+  </div>
 
   <footer>
-    &copy; 2025 Emagreça com Saúde. Todos os direitos reservados.
+    &copy; 2025 - Sua Marca de Saúde. Todos os direitos reservados.
   </footer>
 </body>
 </html>
